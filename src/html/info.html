@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2><span>Информация о модели</span></h2>
+    <span>Тип модели: </span>
+    <span style="height: 1pt;">{{ type }}</span><br>
+
+    <span>Количество базовых моделей: </span>
+    <span style="height: 1pt;">{{ n_estimators }}</span><br>
+
+    <span>Размерность подвыборки признаков: </span>
+    <span style="height: 1pt;">{{ feature_subsample_size }}</span><br>
+
+    <span>Максимальная глубина дерева: </span>
+    <span style="height: 1pt;">{{ max_depth }}</span><br>
+
+    <span>Темп обучения (только для Gradient Boosting MSE!): </span>
+    <span style="height: 1pt;">{{ learning_rate }}</span><br>
+
+    <a href="{{url_for('train_dataset')}}"">{{download_train_data}}</a><br>
+
+    <span>RMSE на обучающей выборке: </span>
+    <span style="height: 1pt;">{{ train_rmse }}</span><br>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2><span>Обучение модели</span></h2>
+    <span style="color: gray;"><small>(Внимание! Для выполнения может потребоваться время)</small></span>
+    {{ wtf.quick_form(train_form) }}
+    <span>Значение RMSE на обучающей выборке: </span>
+    <span style="height: 1pt;">{{ model_output }}</span><br>
+    <a href="{{url_for('load_validate_data')}}"">{{next_page}}</a>
+</div>
+{% endblock %}

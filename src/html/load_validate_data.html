@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2><span>Датасет для валидации модели</span></h2>
+    {{ wtf.quick_form(validate_data_form) }} <br>
+    <a href="{{url_for('info')}}"">{{model_info}}</a><br>
+</div>
+{% endblock %}
