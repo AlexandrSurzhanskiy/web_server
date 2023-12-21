@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2><span>Валидация модели</span></h2>
+    {{ wtf.quick_form(validate_form) }}
+    <a href="{{url_for('info')}}"">{{model_info}}</a><br>
+    <span>Значение RMSE на валидационной выборке: </span>
+    <span style="height: 1pt;">{{ model_output }}</span><br>
+    <a href="{{url_for('prediction')}}"">{{get_pred}}</a>
+</div>
+{% endblock %}
